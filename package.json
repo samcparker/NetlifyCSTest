@@ -1,0 +1,13 @@
+{
+  "name": "luca-portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "vuepress": "^1.5.2"
+  },
+  "scripts": {
+    "dev": "vuepress dev",
+    "prod": "vuepress build"
+}
+}
