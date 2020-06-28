@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   repo: samcparker/NetlifyCSTest
   branch: master
 media_folder: ".vuepress/public/"
