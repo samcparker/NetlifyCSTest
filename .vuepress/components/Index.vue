@@ -1,11 +1,6 @@
 <template>
     <div>
         <div class="mb-5 " v-for="post in posts">
-            <!-- <h1><a :href="post.path">{{ post.title }}</a></h1> -->
-            <!-- <a :href="post.path">
-                
-                <img :src="post.frontmatter.image" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
-            </a> -->
             <h1 style="font-family: Anton, sans-serif" class="mb-0">
                 {{ post.title.toUpperCase() }}
             </h1>
@@ -27,8 +22,13 @@
         computed: {
             posts() {
                 var pages = this.$site.pages;
-                return pages.filter(page => page.path.startsWith("/_posts/") && page.path.endsWith(".html")).sort((a,
-                    b) => a.date > b.date);
+                
+                var filtered_sorted = pages.filter(page => page.path.startsWith("/_posts/") && page.path.endsWith(".html")).sort((a,
+                    b) => { return new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime() });
+                filtered_sorted.forEach(element => {
+                    console.log(new Date(element.frontmatter.date).getTime());
+                });
+                return filtered_sorted;
             }
         }
     }
