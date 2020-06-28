@@ -27,7 +27,6 @@
     .parent {
         position: relative;
         height: 400px;
-        transition-duration: 1s;
 
     }
 
@@ -48,7 +47,7 @@
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
         font-size: 50px;
-        mix-blend-mode: difference;
+
     }
 
 
