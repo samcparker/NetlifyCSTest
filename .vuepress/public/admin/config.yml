@@ -2,8 +2,7 @@ backend:
   name: git-gateway
   repo: samcparker/NetlifyCSTest
   branch: master
-media_folder: ".vuepress/public/"
-public_folder: "../../"
+media_folder: ".vuepress/public/images/uploads"
 display_url: luca-portfolio.samcparker.co.uk
 collections:
   - name: "post" # Used in routes, e.g., /admin/collections/blog
