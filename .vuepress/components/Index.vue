@@ -4,7 +4,7 @@
             <h2 style="" class="mb-2">
                 {{ post.title.toUpperCase() }}
             </h2>
-            <div class="parent shadow-md ">
+            <div class="parent shadow-sm ">
                 <img :src="post.frontmatter.image" />
                 <a :href="post.path">
                     <div class="overlay">

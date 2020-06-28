@@ -1,7 +1,7 @@
 <template>
     <div>
         <header class="">
-            <nav style="height: 100px" class="mb-5 navbar navbar-expand-sm navbar-light bg-light">
+            <nav style="height: 100px" class="shadow mb-5 navbar navbar-expand-sm navbar-light bg-light">
                     <div class="container">
                 <a class="brand navbar-brand" href="/">{{ $site.title.toUpperCase() }}</a>
                 <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
