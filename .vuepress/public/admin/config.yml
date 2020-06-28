@@ -2,7 +2,6 @@ backend:
   name: github
   repo: samcparker/NetlifyCSTest
   branch: master
-  base_url: https://github-auth.samcparker.co.uk
 media_folder: ".vuepress/public/"
 public_folder: "../../"
 display_url: luca-portfolio.samcparker.co.uk
