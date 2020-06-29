@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <img :src="getSrc" />
+        <img :src="$page.frontmatter.image" />
 
 
   
@@ -16,16 +16,16 @@
 <script>
     export default {
         mounted() {
-            console.log(this.$page.frontmatter.image);
+            console.log(this.$page.frontmatter);
         },
         computed: {
-            getSrc() {
-                // if image location begins with a '.' then it's relative, else it's a direct link
-                if (this.$page.frontmatter.image.startsWith(".")) {
-                    return '.' + this.$page.frontmatter.image;
-                }
-                return this.$page.frontmatter.image;
-            }
+            // getSrc() {
+            //     // if image location begins with a '.' then it's relative, else it's a direct link
+            //     if (this.$page.frontmatter.image.startsWith(".")) {
+            //         return '.' + this.$page.frontmatter.image;
+            //     }
+            //     return this.$page.frontmatter.image;
+            // }
         }
     }
 </script>
@@ -36,4 +36,5 @@
      height: 500px;
      object-fit: cover;
  }
+
 </style>

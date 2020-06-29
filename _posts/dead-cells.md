@@ -1,9 +1,11 @@
 ---
 title: Dead Cells
-image: ./images/dc.jpg
+image: /images/dc.jpg
 date: 2020-06-28T15:34:43.324Z
 ---
 This game is called Dead Cells. It's a pretty awesome game if you ask me.
+
+![An image](/images/dc.jpg)
 
 Est anim sint aute aute magna ea pariatur deserunt cillum. Esse commodo enim fugiat officia adipisicing. Duis minim laborum minim duis. Sit adipisicing ea et nisi nulla ea eu commodo eiusmod culpa occaecat deserunt elit duis.
 
