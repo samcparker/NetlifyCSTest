@@ -3,7 +3,7 @@ backend:
   repo: samcparker/NetlifyCSTest
   branch: master
 media_folder: "/images"
-display_url: luca-portfolio.samcparker.co.uk
+display_url: luca-portfolio.netlify.app
 collections:
   - name: "post" # Used in routes, e.g., /admin/collections/blog
     label: "Post" # Used in the UI
@@ -17,3 +17,12 @@ collections:
       - {label: "Featured Image", name: "image", widget: "image"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Visible", name: "visible", widget: "boolean", required: false, default: true}
+  - name: "about"
+    label: "About"
+    folder: ""
+    create: false
+    fields: 
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Name", name: "about_name", widget: "string"}
