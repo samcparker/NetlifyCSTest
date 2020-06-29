@@ -1,7 +1,8 @@
 <template>
     <div>
         <div class="mb-5 pt-3" v-for="post in posts">
-            <h2 style="" class="mb-2">
+
+                            <h2 style="" class="mb-2">
                 {{ post.title.toUpperCase() }}
             </h2>
             <div class="parent ">
@@ -12,6 +13,8 @@
                     </div>
                 </a>
             </div>
+     
+
             
         </div>
     </div>
@@ -19,17 +22,26 @@
 
 <script>
     export default {
+        data: () => {
+            return {
+                config: null
+            }
+        },
         computed: {
             posts() {
                 var pages = this.$site.pages;
                 
-                var filtered_sorted = pages.filter(page => page.path.startsWith("/_posts/") && page.path.endsWith(".html")).sort((a,
+                var filtered_sorted = pages.filter(page => page.path.startsWith("/_posts/") && page.path.endsWith(".html") && page.frontmatter.visible).sort((a,
                     b) => { return new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime() });
- 
+                filtered_sorted.forEach(element => {
+                    console.log(element.frontmatter.visible)
+                });
                 return filtered_sorted;
             }
+
         }
     }
+
 </script>
 
 <style scoped>

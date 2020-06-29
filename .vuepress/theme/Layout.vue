@@ -1,33 +1,10 @@
 <template>
     <div>
         <header class="">
-            <!-- <nav style="height: 100px" class=" mb-5 navbar navbar-expand-sm navbar-light bg-light">
-                    <div class="container">
-                <a class="brand navbar-brand" href="/">{{ $site.title.toUpperCase() }}</a>
-                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
-                    data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-                    aria-label="Toggle navigation"></button>
-                <div class="collapse navbar-collapse nav-links bg-light px-2" id="collapsibleNavId">
-                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">SHOWCASE</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">ABOUT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">CONTACT</a>
-                        </li>
-                    </ul>
-                </div>
-</div>
-
-
-            </nav> -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
-        <a class="navbar-brand brand d-none d-md-block" href="#">LUCA'S PORTFOLIO</a>
-        <a class="navbar-brand brand-sm d-md-none" href="#">LUCA'S PORTFOLIO</a>
+        <a class="navbar-brand brand d-none d-md-block" href="/">LUCA'S PORTFOLIO</a>
+        <a class="navbar-brand brand-sm d-md-none" href="/">LUCA'S PORTFOLIO</a>
     
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -36,10 +13,10 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav mr-auto nav-links">
             <li class="nav-item">
-              <a class="nav-link" href="#">SHOWCASE</a>
+              <a class="nav-link" href="/">SHOWCASE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">ABOUT</a>
+              <a class="nav-link" href="/about">ABOUT</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">CONTACT</a>
@@ -51,8 +28,9 @@
         </header>
         <div style="min-height: 0px; width: 100%"></div>
         <main role="main" class="container">
-            <Index v-if="isIndex" />
-            <Single v-if="!isIndex" />
+            <Index v-if="getPage() == 'index'" />
+            <Single v-if="getPage() == 'single'" />
+            <About v-if="getPage() == 'about'" />
         </main>
         <div style="min-height: 50px; width: 100%"></div>
         <footer>
@@ -83,15 +61,45 @@
 <script>
     import Index from '../components/Index.vue';
     import Single from '../components/Single.vue';
+    import About from '../components/About.vue';
+
     export default {
         components: {
             Index,
-            Single
+            Single, About
         },
-        computed: {
-            isIndex() {
-                return this.$page.path.endsWith("/");
+        data: () => { return {
+            config: null
+        }},
+        methods: {
+            getConfig() {
+                this.$site.pages.forEach(element => {
+                    if (element.relativePath == "index.md") {
+                        this.config = element;
+                        console.log(this.config);
+                        return;
+                    }
+                    
+                });
+            },
+             getPage() {
+                var page = this.$page;
+                console.log(page.relativePath);
+                if (page.relativePath.startsWith("index")) {
+                    return "index";
+                }
+                if (page.relativePath.startsWith("about")) {
+                    console.log(page);
+                    return "about";
+                }
+                if (page.relativePath.startsWith("contact")) {
+                    return "contact";
+                }
+                return "single";
             }
+        },
+        mounted () {
+            this.getConfig();
         }
     }
 </script>

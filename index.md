@@ -1,4 +1,3 @@
 ---
-title: Title1
+title: Showcase
 ---
-# Luca Portfolio!

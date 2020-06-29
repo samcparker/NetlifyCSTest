@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   repo: samcparker/NetlifyCSTest
   branch: master
-media_folder: "./images"
+media_folder: "/images"
 display_url: luca-portfolio.samcparker.co.uk
 collections:
   - name: "post" # Used in routes, e.g., /admin/collections/blog
@@ -16,3 +16,4 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Featured Image", name: "image", widget: "image"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Visible", name: "visible", widget: "boolean", required: false, default: true}

@@ -2,6 +2,7 @@
 title: Dead Cells
 image: /images/dc.jpg
 date: 2020-06-28T15:34:43.324Z
+visible: true
 ---
 This game is called Dead Cells. It's a pretty awesome game if you ask me.
 
