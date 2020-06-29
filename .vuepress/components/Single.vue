@@ -1,54 +1,39 @@
 <template>
     <div>
-        <div class="parent">
-            <img :src="$page.frontmatter.image" />
 
-                <div class="overlay">
-                    <p class="title">
-                        {{ $page.frontmatter.title.toUpperCase() }}
-                    </p>
-                    <p class="lead">
-                        Location: Unknown<br>
-                        Temperature: 17 C
-                    </p>
-                </div>
-       
-        </div>
+        <img :src="getSrc" />
+
+
+  
+        <h2 class="title">
+            {{ $page.frontmatter.title.toUpperCase() }}
+        </h2>
+
+        <Content />
     </div>
 </template>
 
 <script>
     export default {
-
+        mounted() {
+            console.log(this.$page.frontmatter.image);
+        },
+        computed: {
+            getSrc() {
+                // if image location begins with a '.' then it's relative, else it's a direct link
+                if (this.$page.frontmatter.image.startsWith(".")) {
+                    return '.' + this.$page.frontmatter.image;
+                }
+                return this.$page.frontmatter.image;
+            }
+        }
     }
 </script>
 
 <style scoped>
-    .parent {
-        position: relative;
-        height: 400px;
-
-    }
-
-    .parent img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .parent .overlay {
-        padding-left: 10px;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        color: white;
-
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        font-size: 50px;
-
-    }
-
-
+ img {
+     width: 100%;
+     height: 500px;
+     object-fit: cover;
+ }
 </style>
