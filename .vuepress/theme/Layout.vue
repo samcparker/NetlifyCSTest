@@ -19,7 +19,7 @@
               <a class="nav-link" href="/about">ABOUT</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">CONTACT</a>
+              <a class="nav-link" href="/contact">CONTACT</a>
             </li>
           </ul>
         </div>
@@ -31,13 +31,14 @@
             <Index v-if="getPage() == 'index'" />
             <Single v-if="getPage() == 'single'" />
             <About v-if="getPage() == 'about'" />
+            <Contact v-if="getPage() == 'contact'" />
         </main>
         <div style="min-height: 50px; width: 100%"></div>
-        <footer>
-            <!-- <div class="container">
+        <!-- <footer>
+            <div class="container">
                 
 
-            </div> -->
+            </div>
             <div class="jumbotron jumbotron-fluid mb-0">
                 <div class="container">
                 
@@ -53,7 +54,25 @@
                 </div>
                 </div>
             </div>
-        </footer>
+        </footer> -->
+
+        <footer class="footer">
+ <div class="jumbotron jumbotron-fluid mb-0">
+                <div class="container">
+                
+                    <div class="row">
+                        <div class="col-sm w-100">
+                        <span class="text-muted">Contact Luca @ <a href="#">luca@gmail.com</a></span>
+                    </div>
+                    <div class="col-sm text-right w-100">
+                        <span class="text-muted">Website made by <a href="https://www.samcparker.co.uk">Sam
+                                Parker</a></span>
+                    </div>
+                    
+                </div>
+                </div>
+            </div>
+    </footer>
 
     </div>
 </template>
@@ -106,6 +125,23 @@
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap');
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px; /* Margin bottom by footer height */
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px; /* Set the fixed height of the footer here */
+  line-height: 30px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
 
 
     html {

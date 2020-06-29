@@ -17,8 +17,8 @@ collections:
       - {label: "Featured Image", name: "image", widget: "image"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Visible", name: "visible", widget: "boolean", required: false, default: true}
-  - name: "about"
-    label: "About"
+  - name: "main"
+    label: "Main"
     folder: ""
     create: false
     fields: 
