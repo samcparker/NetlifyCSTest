@@ -3,8 +3,8 @@
         <header class="">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
-        <a class="navbar-brand brand d-none d-md-block" href="/">LUCA'S PORTFOLIO</a>
-        <a class="navbar-brand brand-sm d-md-none" href="/">LUCA'S PORTFOLIO</a>
+        <a class="navbar-brand brand d-none d-md-block" href="/">LUCA'S STUDIO</a>
+        <a class="navbar-brand brand-sm d-md-none" href="/">LUCA'S STUDIO</a>
     
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -59,17 +59,11 @@
         <footer class="footer">
  <div class="jumbotron jumbotron-fluid mb-0">
                 <div class="container">
-                
-                    <div class="row">
-                        <div class="col-sm w-100">
-                        <span class="text-muted">Contact Luca @ <a href="#">luca@gmail.com</a></span>
-                    </div>
-                    <div class="col-sm text-right w-100">
+                    <div class="col-sm w-100">
                         <span class="text-muted">Website made by <a href="https://www.samcparker.co.uk">Sam
                                 Parker</a></span>
                     </div>
-                    
-                </div>
+        
                 </div>
             </div>
     </footer>

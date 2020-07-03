@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  repo: samcparker/NetlifyCSTest
+  repo: samcparker/luca-portfolio
   branch: master
 media_folder: "/images"
 display_url: luca-portfolio.netlify.app
